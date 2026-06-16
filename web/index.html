@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feature Graveyard AI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">FG</div>
+          <div>
+            <strong>Feature Graveyard AI</strong>
+            <span>Legacy intelligence</span>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Navegacao principal">
+          <a class="nav-item active" href="#overview">Overview</a>
+          <a class="nav-item" href="#features">Features</a>
+          <a class="nav-item" href="#ingest">Ingestao</a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="status-dot"></span>
+          <span id="modelStatus">Carregando analise</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">System cleanup cockpit</p>
+            <h1>Feature Graveyard AI</h1>
+          </div>
+          <div class="actions">
+            <select id="windowDays" aria-label="Janela de analise">
+              <option value="90">90 dias</option>
+              <option value="180" selected>180 dias</option>
+              <option value="365">365 dias</option>
+            </select>
+            <button id="refreshButton" type="button">Atualizar</button>
+          </div>
+        </header>
+
+        <section id="overview" class="metric-grid" aria-label="Metricas do graveyard">
+          <article class="metric">
+            <span>Total</span>
+            <strong id="totalFeatures">0</strong>
+            <small>features avaliadas</small>
+          </article>
+          <article class="metric danger">
+            <span>Mortas</span>
+            <strong id="deadFeatures">0</strong>
+            <small>candidatas fortes</small>
+          </article>
+          <article class="metric warning">
+            <span>Em risco</span>
+            <strong id="atRiskFeatures">0</strong>
+            <small>precisam revisao</small>
+          </article>
+          <article class="metric positive">
+            <span>Remocao</span>
+            <strong id="removalCandidates">0</strong>
+            <small>baixo risco</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div id="features" class="panel large-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Mapa de features</h2>
+                <p>Ordenado por urgencia de revisao e impacto de remocao.</p>
+              </div>
+              <span id="generatedAt" class="pill">--</span>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Status</th>
+                    <th>Risco</th>
+                    <th>Ultimo acesso</th>
+                    <th>Usuarios</th>
+                    <th>Freq./mes</th>
+                  </tr>
+                </thead>
+                <tbody id="featureRows"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="panel insight-panel">
+            <div class="panel-header compact">
+              <h2>Analise executiva</h2>
+              <span id="generatedBy" class="pill dark">IA</span>
+            </div>
+            <div id="executiveInsight" class="insight">
+              <strong>Selecione uma feature</strong>
+              <p>A analise aparece aqui quando o relatorio carregar.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section id="ingest" class="panel ingest-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Novo log de uso</h2>
+              <p>Simule eventos reais para recalcular o graveyard.</p>
+            </div>
+          </div>
+
+          <form id="usageForm" class="form-grid">
+            <label>
+              Feature
+              <input name="feature" required value="RelatorioExportacaoExcel" />
+            </label>
+            <label>
+              User ID
+              <input name="userId" required value="123" />
+            </label>
+            <label>
+              Ultimo acesso
+              <input name="lastAccess" type="date" required />
+            </label>
+            <label>
+              Total acessos
+              <input name="totalAccess" type="number" min="0" required value="1" />
+            </label>
+            <button type="submit">Enviar log</button>
+          </form>
+          <p id="formFeedback" class="feedback" role="status"></p>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
