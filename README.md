@@ -84,13 +84,3 @@ O projeto segue DDD em camadas simples:
 ```bash
 go test ./...
 ```
-
-## Post sugerido para LinkedIn
-
-Criei um experimento em Go usando Gemini para identificar funcionalidades mortas em sistemas legados.
-
-A ideia e simples: cruzar logs de acesso, uso por usuario e tempo sem utilizacao para detectar features com baixo valor, e usar IA para gerar uma analise executiva sobre risco, impacto e sugestao de acao.
-
-Em empresas grandes, sistemas acumulam telas, endpoints e relatorios que ninguem usa mais, mas continuam gerando custo, complexidade e manutencao.
-
-Esse tipo de ferramenta conversa muito com contextos enterprise como varejo, industria, fintechs e qualquer empresa com muitos sistemas internos.
