@@ -4,6 +4,8 @@ Experimento em Go para identificar funcionalidades mortas ou pouco usadas em sis
 
 O sistema recebe logs de uso, agrupa por funcionalidade, calcula recencia, usuarios unicos, frequencia, risco de remocao e gera recomendacoes de negocio. Quando `GEMINI_API_KEY` esta configurada, a analise executiva vem do Gemini. Sem chave, a aplicacao usa um analisador local deterministico para facilitar demo e testes.
 
+![Preview do Feature Graveyard AI](assets/Imagem.png)
+
 ## Rodando
 
 ```bash
